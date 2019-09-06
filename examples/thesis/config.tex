@@ -1,0 +1,53 @@
+% ==============================================================================
+% load packages with [options]
+% hyperlinks
+\usepackage[
+  colorlinks,
+  pdfusetitle]
+  {hyperref}
+% reference management
+\usepackage[
+  backend      = bibtex,
+  style        = numeric,
+  maxcitenames = 2,
+  sorting      = none,
+  url          = true,
+  isbn         = false,
+  doi          = true,
+  eprint       = false]
+  {biblatex}
+% margins
+\usepackage[margin=2cm]{geometry}
+% syntax-highlight LaTeX code
+\usepackage{listings}
+% load packages without [options]
+\usepackage{tikz,amsmath,nameref,float,booktabs}
+% ==============================================================================
+% package configuration
+% choose hyperlink colors
+\hypersetup{
+  citecolor = purple,
+  linkcolor = blue,
+  urlcolor  = magenta}
+% format LaTeX code
+\lstset{
+  language = [LaTeX]TeX,
+  breaklines = true,
+  basicstyle     = \color[RGB]{128,128,128}\tt\scriptsize,
+  backgroundcolor= \color[RGB]{240,240,240},
+  keywordstyle   = \color[RGB]{ 64,128,255},
+  texcsstyle     =*\color[RGB]{ 64,128,255},
+  identifierstyle= \color[RGB]{ 64, 64, 64},
+  numberstyle    = \color[RGB]{ 64, 64, 64},
+  morekeywords = {cmd,includegraphics,citeauthor,citeyear,section,subsection,subsubsection,printbibliography}
+}
+% where to look for figures
+\graphicspath{{figs/},{figs/m/},{figs/tikz/}}
+% tikz can produce plots & charts in LaTeX - load some style packages here
+\usetikzlibrary{shapes,arrows.meta,calc,positioning}
+% where to look for references
+\bibliography{library.bib}
+% redefining some spacing stuff
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{8pt}
+\setlength{\skip\footins}{32pt}

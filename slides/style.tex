@@ -1,0 +1,55 @@
+% beamer style
+\usetheme{Malmoe}
+\definecolor{C1}{RGB}{  8, 93,119}
+\definecolor{C2}{RGB}{ 29,188,237}
+\definecolor{C3}{RGB}{194,  4, 48}
+\setbeamercolor{title}     {fg=C1}
+\setbeamercolor{frametitle}{fg=C1}
+\setbeamercolor{structure} {fg=C1}
+\setbeamercolor{label}     {fg=C2}
+\setbeamercolor{section}   {fg=white,bg=C1}
+\setbeamercolor{subsection}{fg=white,bg=C1!60!white}
+\setbeamercolor{link}      {fg=white,bg=C1}
+\setbeamersize{text margin left=2em,text margin right=2em}
+\setbeamertemplate{frametitle continuation}{}
+\setbeamertemplate{bibliography item}{\colortext{C2}{\insertbiblabel}}
+\setbeamertemplate{caption}{\centering\footnotesize{\insertcaption}\par}
+\usefonttheme{serif}
+\beamertemplatetransparentcoveredhigh
+% colors
+\let\oldcite=\cite
+\renewcommand{\cite}[1]{\textcolor{purple}{\oldcite{#1}}}
+% misc
+\renewcommand*{\bibfont}{\tiny}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{6pt}
+\setlength{\belowcaptionskip}{-8pt}
+% footer & frame number
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+\let\oldshortauthor=\insertshortauthor
+\renewcommand{\insertshortauthor}{\textcolor{gray}{\oldshortauthor}}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{itemize item}{fg=C1!100!white}
+\setbeamercolor{itemize subitem}{fg=C1!60!white}
+\setlength{\leftmargini}{6pt}
+\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+\addtolength{\leftmargini}{\labelsep}
+\xpatchcmd{\itemize}{\def\makelabel}{\setlength{\itemsep}{0.7em}\def\makelabel}{}{}
+% itemize spacing
+\let\tmpitemize\itemize
+\let\tmpenditemize\enditemize
+\renewenvironment{itemize}{\tmpitemize\addtolength{\itemsep}{-0.1\baselineskip}}{\tmpenditemize}
+% section titles
+\AtBeginSection[]{\begin{frame}\vfill\centering
+  \begin{beamercolorbox}[sep=18pt,center]{section}
+    \usebeamerfont{title}\textsc{\insertsectionhead}\par%
+  \end{beamercolorbox}
+  \vfill\end{frame}}
+% subsection titles
+\newcommand{\subsectionslide}{\begin{frame}\vfill\centering
+  \begin{beamercolorbox}[sep=12pt,center]{subsection}
+    \usebeamerfont{title}\insertsubsectionhead\par%
+  \end{beamercolorbox}
+  \vfill\end{frame}}

@@ -1,0 +1,35 @@
+% ==============================================================================
+% load packages with [options]
+% hyperlinks
+\usepackage[colorlinks]{hyperref}
+% syntax-highlight LaTeX code
+\usepackage{listings}
+% load packages without [options]
+\usepackage{tikz,amsmath,nameref,float,booktabs}
+% ==============================================================================
+% package configuration
+% choose hyperlink colors
+\hypersetup{
+  citecolor = purple,
+  linkcolor = blue,
+  urlcolor  = magenta}
+% format LaTeX code
+\lstset{
+  language = [LaTeX]TeX,
+  breaklines = true,
+  basicstyle     = \color[RGB]{128,128,128}\tt\scriptsize,
+  backgroundcolor= \color[RGB]{240,240,240},
+  keywordstyle   = \color[RGB]{ 64,128,255},
+  texcsstyle     =*\color[RGB]{ 64,128,255},
+  identifierstyle= \color[RGB]{ 64, 64, 64},
+  numberstyle    = \color[RGB]{ 64, 64, 64},
+  morekeywords = {cmd,includegraphics,citeauthor,citeyear,section,subsection,subsubsection,printbibliography}
+}
+% where to look for figures
+\graphicspath{{figs/},{figs/m/},{figs/tikz/}}
+% tikz can produce plots & charts in LaTeX - load some style packages here
+\usetikzlibrary{shapes,calc,positioning}
+% bibtex
+\bibliographystyle{apalike}
+% spacing
+\setlength{\parindent}{0pt}

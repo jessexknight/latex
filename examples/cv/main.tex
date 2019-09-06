@@ -1,0 +1,119 @@
+% !TeX program = xelatex
+% !BIB program = bibtex
+\documentclass[roman]{moderncv}
+\moderncvstyle{classic}
+\input{cv-style.tex}
+\input{bib-style.tex}
+% author
+\name{First}{Last}
+\address{}{Toronto ON Canada}{}
+\phone{555-555-5555}
+\email{example@gmail.com}
+\social[github]{example}
+\social[linkedin]{example}
+\addbibresource{publications.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ==================================================================================================
+% --------------------------------------------------------------------------------------------------
+\begin{document}
+\initwidths
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makecvtitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summary of Skills}
+\cvlistitem{cool skills}
+\cvlistitem{even more cool skills}
+\cvlistitem{okay, cool it}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education}
+\cventry{20xx-xx\df 20xx-xx}{PhD, specialization}
+        {University}{}{}{}
+\cvitem{}{Thesis: Title of the thesis}
+\cventry{20xx-xx\df 20xx-xx}{BSc, degree}
+        {University}{}{}{}
+\cvitem{}{Foci: list some stuff}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Research Experience}
+% --------------------------------------------------------------------------------------------------
+\cventry{20xx-xx\df Present}
+{Position Title (\hrefc{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{link})}
+{Employer}{Location}{}{}
+\cvlistitem{Did cool stuff}
+\cvlistitem{A lot of stuff}
+% --------------------------------------------------------------------------------------------------
+\cventry{20xx-xx\df 20xx-xx}
+{Another Position (\hrefc{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{link})}
+{Another Employer}{Location}{}{}
+\cvlistitem{Bought coffee}
+\cvlistitem{Kept benches exceptionally warm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Awards \& Scholarships}
+% ==================================================================================================
+\subsection{Grants}
+\cventry{(applied)}         {Project Title}{Funder}{\$XX,000}{Role: PI (XX\% \textsc{fte})}
+{project description}
+\cventry{20xx-xx\df 20xx-xx}{Project Title}{Funder}{\$XX,000}{Role: Co-I (XX\% \textsc{fte})}
+{project description}
+\cventry{20xx-xx\df 20xx-xx}{Project Title}{Funder}{\$XX,000}{Role: Co-I (XX\% \textsc{fte})}
+{project description}
+% ==================================================================================================
+\subsection{Scholarships}
+\cventry{(applied)}         {Title}{Organization}{\$XX,000}{}
+{detailed description}
+\cventry{20xx-xx\df 20xx-xx}{Title}{Organization}{\$XX,000}{short description}{}
+\cventry{20xx-xx\df 20xx-xx}{Title}{Organization}{\$XX,000}{short description}{}
+% ==================================================================================================
+\subsection{Selected Awards}
+\cventry{20xx}{Title}{Organization}{}{}{detailed description}
+\cventry{20xx}{Title}{Organization}{}{short description}{}
+\cventry{20xx, 20xx}{Multi-year Title}{Organization}{}{short description}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Teaching}
+% ==================================================================================================
+\subsection{Lecturing}
+\cventry{20xx-xx\df 20xx-xx}
+{Lecturer}
+{University}{}{}{}
+\cvlistitem{Responsibilities}
+\cvlistitem{Courses:\\[0.5em]\setlength{\tabcolsep}{3pt}\footnotesize
+  \begin{tabular}{rlcrl}
+    x semesters & Course A   & & x semesters & Course B \\
+    x semesters & Course C   & & x semesters & Course D \\
+\end{tabular}}
+% ==================================================================================================
+\subsection{Supervision}
+\cventry{20xx-xx\df 20xx-xx}{Student}{University}{PhD}{}
+{Project title}
+\cventry{20xx-xx\df 20xx-xx}{Another Student}{University}{MSc}{}
+{Another Project title}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Publications}
+\fullwidth
+\boldname{Last}{First}{}
+\nocite{*}
+\newcommand{\printbib}[1]{\printbibliography[heading=none,type=#1]}
+% ==================================================================================================
+\subsection{Articles}
+\printbib{article}
+% ==================================================================================================
+\subsection{Conferences}
+\printbib{inproceedings}
+% ==================================================================================================
+\subsection{Thesis}
+\printbib{thesis}
+% ==================================================================================================
+\subsection{Reviewer Work}
+{\small
+\cvitemdate{}{Journal}{x reviews}{}
+\cvitemdate{}{Another Journal}{x reviews}{}
+}
+\defaultwidth
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Service}
+\cventry{20xx-xx\df Present}{Position}{Group}{}{}{}
+\cventry{20xx-xx\df 20xx-xx}{Former Position}{Another Group}{}{}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+% --------------------------------------------------------------------------------------------------
+% ==================================================================================================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

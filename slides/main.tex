@@ -1,0 +1,123 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[11pt,aspectratio=169]{beamer}
+% metadata
+\title[\LaTeX: A Short Introduction]{\LaTeX\\\textsc{\small{A Short Introduction}}}
+\author{Jesse Knight}
+\institute{MAP Centre for Urban Health Solutions}
+\date{2019 April 24}
+\input{config.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  \maketitle
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}[label=overview]{Overview}
+  \tableofcontents
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{What is \LaTeX?}
+  \pause
+  A typesetting program:
+  \pause
+  \textit{content} $\rightarrow$ \textit{a document}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{}
+  \centering
+  \begin{tabular}{m{0.4\linewidth} m{1cm} m{0.4\linewidth}}
+    \parbox{\linewidth}{\centering input: \texttt{filename.tex}}
+    & \LaTeX &
+    \parbox{\linewidth}{\centering output: \texttt{filename.pdf}}
+    \\[0.5em]
+    \frame{\includegraphics[width=\linewidth]{io-in.png}}
+    & \bigarrow{1,0} &
+    \frame{\includegraphics[width=\linewidth]{io-out.pdf}}
+  \end{tabular}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Advantages of \LaTeX}
+  \pause
+  \begin{itemize}
+    \item<+-> separate content and formatting
+    \item<+-> automate numbers and cross-references
+    \item<+-> beautiful math
+    \item<+-> comments and version control
+    \item<+-> split-up large documents into parts
+    \item<+-> it's free!
+  \end{itemize}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{How does \LaTeX\ Work?}
+  Three layers:
+  \begin{enumerate}
+    \pause\item\parbox{2.3cm}{``primitives''} -- e.g.\ \lstinline|\def\pi{3.14}| defines a macro \lstinline|\pi| to contain ``3.14''\\[0.2em]
+         \pause\parbox{2.3cm}{+ ``kernel''}   -- e.g.\ tools to combine primitives
+    \pause\item\parbox{2.3cm}{``classes''}    -- e.g.\ an article, which should have: title, author, sections, etc.\\[0.2em]
+         \pause\parbox{2.3cm}{+ ``packages''} -- e.g.\ modify or extend a basic class
+    \pause\item\parbox{2.3cm}{``document''}   -- e.g.\ this specific article (including content!)
+  \end{enumerate}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Getting Started}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Your First Document}
+  \begin{minipage}{0.44\linewidth}
+    \begin{lstlisting}
+\documentclass{article}
+% document header
+\begin{document}
+  % document content
+  Hello World
+\end{document}
+    \end{lstlisting}
+  \end{minipage}
+  \pause
+  \begin{minipage}{0.55\linewidth}
+    But first: \hrefc{https://www.overleaf.com}{Overleaf}
+    \pause
+    $\rightarrow$ ``New Project''
+  \end{minipage}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Document Elements}
+  \pause
+  \begin{itemize}
+    \item<+-> title, author, date
+    \item<+-> sections
+    \item<+-> math
+    \item<+-> cross-references \& table of contents
+    \item<+-> citations \& bibliography
+  \end{itemize}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{Putting it all Together}
+  \pause
+  \begin{itemize}
+    \item<+-> e.g.\ \hrefc{../examples/thesis/main.pdf}{a thesis}
+    \item<+-> e.g.\ \hrefc{../examples/cv/main.pdf}{a CV}
+    \item<+-> e.g.\ \hrefc{../examples/article/main.pdf}{an article}
+  \end{itemize}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Helpful Resources}
+\newcommand{\linkbox}[2]{\parbox{3.5cm}{\hrefc{#1}{#2}}}
+  \begin{itemize}
+    \item \linkbox{https://www.overleaf.com}{Overleaf}
+    -- Online \LaTeX\ writing application\\
+    \item \linkbox{https://www.latex-tutorial.com/installation}{\LaTeX\ Install Guide}
+    -- To install \LaTeX\ on your computer (offline)\\
+    \item \linkbox{https://www.texstudio.org}{TeXstudio}
+    -- Great editor for composing \LaTeX\ ``code'' (offline)\\
+    \item \linkbox{https://tex.stackexchange.com/questions/9363}{\TeX\ Stack Exchange}
+    -- Q \& A style how-to and debugging help
+    \item \linkbox{https://wch.github.io/latexsheet/latexsheet.pdf}{\LaTeX\ Cheat Sheet}
+    -- A really nice reference for common commands
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

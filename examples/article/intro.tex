@@ -1,0 +1,64 @@
+In this section we introduce \LaTeX.
+\subsection{Comparison vs. Microsoft Word}
+\LaTeX\ is an alternative to MS Word.
+It's not better in every situation (Figure \ref{fig:latex-vs-word}),
+but for large, complicated, or math-heavy documents,
+its undeniably better.
+\begin{figure}[H]
+  \centering\includegraphics[width=0.5\textwidth]{latex-vs-word}
+  \caption{\LaTeX\ vs MS Word}%
+  \label{fig:latex-vs-word}
+\end{figure}
+\par
+The major paradigm shift when transitioning from MS Word to \LaTeX\ is that
+you do not see the final product while you are typing.
+Instead, the document is \textit{compiled},
+producing a PDF document directly.
+\par
+This allows more complex document creation,
+without trying to resolve all links as you type.
+For example, the Table of Contents for this document is generated automatically using
+\lstinline|\tableofcontents|.
+\subsection{Components}
+\subsubsection{Commands}
+In \LaTeX, all commands are preceded by a backslash: \lstinline|\|.
+Not all commands accept arguments, but when they do, you must supply all of them,
+and enclose each in braces: \lstinline|{...}|.
+For example, \lstinline|$\frac{1}{2}$| produces $\frac{1}{2}$ (more on the \lstinline|$| later).
+\par
+You can create your own commands using:
+\lstinline|\newcommand{\cmd}{definition}|,
+which you could use as:
+\lstinline|my command is: \cmd|,
+producing:
+``my command is: definition''.
+If you want your command to use arguments, the syntax is:
+\lstinline|\newcommand{\cmd}[1]{You provided the argument: #1}|,
+for which
+\lstinline|\cmd{apples}|
+produces
+``You provided the argument: apples''.
+\subsubsection{Packages}
+\LaTeX\ doesn't always have all the tools we need.
+We'll often need to import user-created packages to do some fancy stuff,
+like embedding images, creating flow-charts, etc.
+To do this, we use:\\
+\lstinline|\usepackage{packagename}|.
+This will provide us additional commands that we can use to create our document.
+You must load packages in the document header.
+\subsubsection{Hello World}
+What is the document header, you ask?
+Let's look at a minimal working example.
+This code produces a document containing only the words ``hello world!'':
+\begin{lstlisting}
+  \documentclass{article}
+  % load packages here
+  \begin{document}
+    % document content here
+    hello world!
+  \end{document}
+\end{lstlisting}
+The \lstinline|\documentclass| command specifies the type of document,
+while the rendered contents of the document are enclosed in
+\lstinline|\begin{document} ... \end{document}|.
+Comments can be added using \lstinline|%|.

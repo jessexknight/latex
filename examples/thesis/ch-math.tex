@@ -1,0 +1,40 @@
+\chapter{Math}
+\LaTeX\ is probably most well known for typesetting beautiful math.
+\par
+You can write inline variables like: \lstinline|$\pi$| $\rightarrow$ $\pi$
+or small equations like: \lstinline|$\pi = 3.14$| $\rightarrow$ $\pi = 3.14$.
+\par
+Simple stand-alone equations can be invoked several ways, including \lstinline|\[...\]|, \lstinline|$$...$$|:
+\[ x = 1 \]
+$$ y = 2 $$
+but these are not numbered in the margins, and we can't reference them elsewhere.
+\par
+To number the equation, we need to use an environment, like: \lstinline|\begin{equation} ... \end{equation}|:
+\begin{equation}
+z = 3
+\label{eq:z}
+\end{equation}
+If we want to reference the equation, we also need to place a \lstinline|\label{keyword}| within the environment.
+Then, elsewhere we can use \lstinline| Eq. (\ref{keyword})| to reference like this: Eq. (\ref{eq:z}).%
+\footnote{Here we're also using
+  the \href{https://ctan.org/pkg/hyperref}{\texttt{hyperref}} package
+  with the \lstinline|colorlinks| option,
+  which colours the reference and makes it click-able.
+  Same thing for footnotes like this.}
+It's best practice to use something like \lstinline|eq:z| for the \lstinline|keyword| in equations, \lstinline|fig:x-vs-t| for figures, etc.
+\par
+For more complicated or equations, the \lstinline|amsmath| package provides additional helpful environments, like\\
+\lstinline|alignat|:
+\begin{alignat}{7}
+\frac{dS}{dt} &= - (\lambda+\mu &&)S + (\gamma     &&)I + (\mu &&)N\\
+\frac{dI}{dt} &= + (\lambda     &&)S - (\gamma+\mu &&)I
+\end{alignat}
+though we might want to re-write that using some ``\lstinline|array|''s:
+\begin{equation}
+\frac{d}{dt}
+\left[ \begin{array}{c} S \\ I \end{array} \right] =
+\left[ \begin{array}{cc} -\lambda-\mu & +\gamma \\ +\lambda & -\gamma-\mu \end{array} \right]
+\left[ \begin{array}{c} S \\ I \end{array} \right] +
+\left[ \begin{array}{c} \mu \\ 0 \end{array} \right] N
+\end{equation}
+You get the idea.
