@@ -1,0 +1,26 @@
+# archive
+archive/
+
+# tex
+*.aux
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+*.spl
+*.synctex
+*.synctex.gz
+*.synctex.gz
+*.nav
+*.brf
+*.dvi
+*.snm
+*.vrb
+*-converted-to.pdf
