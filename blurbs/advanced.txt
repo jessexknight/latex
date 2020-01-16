@@ -1,0 +1,14 @@
+LaTeX is a free document creation alternative to MS Word which specializes in the creation of professional documents such as journal articles, theses, books, and scientific or technical reports. LaTeX is the standard for writing in many STEM fields and offers advantages for managing references, typesetting maths, inserting graphics and figures, and much more. In this workshop, we will cover some advanced LaTeX topics.
+
+By the end of the session, participants will be able to:
+
+- set up a thesis document
+- create complex tables and figures
+- automatically import data & code
+- draw diagrams using tikz
+- create a conference poster in LaTeX
+- compose advanced mathematics
+
+Previous knowledge of LaTeX is highly recommended.  
+
+
