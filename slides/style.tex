@@ -1,8 +1,8 @@
 % beamer style
 \usetheme{Malmoe}
-\definecolor{C1}{RGB}{  8, 93,119}
-\definecolor{C2}{RGB}{ 29,188,237}
-\definecolor{C3}{RGB}{194,  4, 48}
+\definecolor{C1}{HTML}{00204E}
+\definecolor{C2}{HTML}{0099D2}
+\definecolor{C3}{HTML}{BB133E}
 \setbeamercolor{title}     {fg=C1}
 \setbeamercolor{frametitle}{fg=C1}
 \setbeamercolor{structure} {fg=C1}
@@ -25,8 +25,10 @@
 \setlength{\tabcolsep}{6pt}
 \setlength{\belowcaptionskip}{-8pt}
 % footer & frame number
+\newcommand{\hfilll}{
+  \hfill\hfill\hfill\hfill\hfill\hfill\hfill\hfill}
 \expandafter\def\expandafter\insertshorttitle\expandafter{%
-  \insertshorttitle\hfill%
+  \insertshorttitle\hfilll%
   \insertframenumber\,/\,\inserttotalframenumber}
 \let\oldshortauthor=\insertshortauthor
 \renewcommand{\insertshortauthor}{\textcolor{gray}{\oldshortauthor}}

@@ -1,10 +1,12 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[11pt,aspectratio=169]{beamer}
 % metadata
+\def\github{github.com/jessexknight/latex}
 \title[\LaTeX: A Short Introduction]{\LaTeX\\\textsc{\small{A Short Introduction}}}
-\author{Jesse Knight}
-\institute{MAP Centre for Urban Health Solutions}
-\date{2019 April 24}
+\author[\href{\github}{\tiny\texttt{\github}} \hspace{0.3\linewidth} Jesse Knight]
+{Jesse Knight}
+\institute{University of Toronto\\Libraries}
+\date{2020 January 16}
 \input{config.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -35,7 +37,7 @@
     \\[0.5em]
     \frame{\includegraphics[width=\linewidth]{io-in.png}}
     & \bigarrow{1,0} &
-    \frame{\includegraphics[width=\linewidth]{io-out.pdf}}
+    \frame{\includegraphics[width=\linewidth]{io-out.png}}
   \end{tabular}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
@@ -43,12 +45,18 @@
   \pause
   \begin{itemize}
     \item<+-> separate content and formatting
-    \item<+-> automate numbers and cross-references
+    \item<+-> automate numbering, cross-references, \dots everything!
     \item<+-> beautiful math
     \item<+-> comments and version control
-    \item<+-> split-up large documents into parts
+    \item<+-> no version compatibility issues
     \item<+-> it's free!
   \end{itemize}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}{\LaTeX\ vs MS Word}
+  \begin{figure}
+    \includegraphics[width=0.6\linewidth]{latex-vs-word}
+  \end{figure}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 \begin{frame}[fragile]{How does \LaTeX\ Work?}
@@ -89,17 +97,22 @@
     \item<+-> title, author, date
     \item<+-> sections
     \item<+-> math
+    \item<+-> floats: figures \& tables
     \item<+-> cross-references \& table of contents
     \item<+-> citations \& bibliography
+    \item<+-> appendices \& code
   \end{itemize}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Examples}
 %---------------------------------------------------------------------------------------------------
 \begin{frame}{Putting it all Together}
   \pause
   \begin{itemize}
-    \item<+-> e.g.\ \hrefc{../examples/thesis/main.pdf}{a thesis}
-    \item<+-> e.g.\ \hrefc{../examples/cv/main.pdf}{a CV}
-    \item<+-> e.g.\ \hrefc{../examples/article/main.pdf}{an article}
+    \item<+-> \parbox{2cm}{e.g.\ thesis:}  \footnotesize\texttt{examples/thesis/main.pdf}
+    \item<+-> \parbox{2cm}{e.g.\ CV:}      \footnotesize\texttt{examples/cv/main.pdf}
+    \item<+-> \parbox{2cm}{e.g.\ article:} \footnotesize\texttt{examples/article/main.pdf}
+    \item<+-> \parbox{2cm}{e.g.\ article:} \footnotesize\texttt{examples/poster/main.pdf}
   \end{itemize}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
@@ -107,15 +120,17 @@
 \newcommand{\linkbox}[2]{\parbox{3.5cm}{\hrefc{#1}{#2}}}
   \begin{itemize}
     \item \linkbox{https://www.overleaf.com}{Overleaf}
-    -- Online \LaTeX\ writing application\\
+    -- online \LaTeX\ writing application\\
     \item \linkbox{https://www.latex-tutorial.com/installation}{\LaTeX\ Install Guide}
-    -- To install \LaTeX\ on your computer (offline)\\
+    -- to install \LaTeX\ on your computer (offline)\\
     \item \linkbox{https://www.texstudio.org}{TeXstudio}
-    -- Great editor for composing \LaTeX\ ``code'' (offline)\\
-    \item \linkbox{https://tex.stackexchange.com/questions/9363}{\TeX\ Stack Exchange}
+    -- great editor for composing \LaTeX\ ``code'' (offline)\\
+    \item \linkbox{https://tex.stackexchange.com}{\TeX\ Stack Exchange}
     -- Q \& A style how-to and debugging help
     \item \linkbox{https://wch.github.io/latexsheet/latexsheet.pdf}{\LaTeX\ Cheat Sheet}
-    -- A really nice reference for common commands
+    -- a really nice reference for common commands
+    \item \linkbox{https://github.com/jessexknight/latex}{Github Repository}
+    -- example documents: article, thesis, CV, poster, slides
   \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
