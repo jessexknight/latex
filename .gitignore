@@ -1,5 +1,7 @@
 # archive
 archive/
+blurbs/
+target/
 
 # tex
 *.aux
