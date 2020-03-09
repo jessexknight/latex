@@ -1,12 +1,12 @@
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[11pt,aspectratio=169]{beamer}
 % metadata
-\def\github{github.com/jessexknight/latex}
+\def\github{https://github.com/jessexknight/latex}
 \title[\LaTeX: A Short Introduction]{\LaTeX\\\textsc{\small{A Short Introduction}}}
-\author[\href{\github}{\tiny\texttt{\github}} \hspace{0.3\linewidth} Jesse Knight]
+\author[\href{\github}{\tiny\texttt{\github}} \hspace{0.2\linewidth} Jesse Knight]
 {Jesse Knight}
 \institute{University of Toronto\\Libraries}
-\date{2020 January 16}
+\date{2020 March 18}
 \input{config.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -120,10 +120,10 @@
 \begin{frame}{Putting it all Together}
   \pause
   \begin{itemize}
-    \item<+-> \parbox{2cm}{e.g.\ thesis:}  \footnotesize\texttt{examples/thesis/main.pdf}
-    \item<+-> \parbox{2cm}{e.g.\ CV:}      \footnotesize\texttt{examples/cv/main.pdf}
-    \item<+-> \parbox{2cm}{e.g.\ article:} \footnotesize\texttt{examples/article/main.pdf}
-    \item<+-> \parbox{2cm}{e.g.\ poster:}  \footnotesize\texttt{examples/poster/main.pdf}
+    \item<+-> \parbox{2cm}{e.g.\ article:} \hrefc{\github/tree/master/examples/article/main.pdf}{example}
+    \item<+-> \parbox{2cm}{e.g.\ thesis:}  \hrefc{\github/tree/master/examples/thesis/main.pdf} {example}
+    \item<+-> \parbox{2cm}{e.g.\ poster:}  \hrefc{\github/tree/master/examples/poster/main.pdf} {example}
+    \item<+-> \parbox{2cm}{e.g.\ CV:}      \hrefc{\github/tree/master/examples/cv/main.pdf}     {example}
   \end{itemize}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
