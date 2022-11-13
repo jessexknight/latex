@@ -1,7 +1,5 @@
 # archive
-archive/
-blurbs/
-target/
+.old
 
 # tex
 *.aux
