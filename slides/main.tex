@@ -3,11 +3,10 @@
 % metadata
 \def\github{https://github.com/jessexknight/latex}
 \title[\LaTeX: A Short Introduction]{\LaTeX\\\textsc{\small{A Short Introduction}}}
-\author[\href{\github}{\tiny\texttt{\github}} \hspace{0.2\linewidth} Jesse Knight]
-{Jesse Knight}
+\author[\href{\github}{\tiny\texttt{\github}}\hspace{0.2\linewidth}Jesse Knight]{Jesse Knight}
 \institute{University of Toronto\\Libraries}
-\date{2020 March 18}
-\input{config.tex}
+\date{\today}
+\input{config}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -15,7 +14,7 @@
   \centering\Large
   Please go to
   \\
-  \href{https://www.overleaf.com}{\colortext{C2}{\texttt{www.overleaf.com}}}
+  \hreftt{www.overleaf.com}
   \\
   and make an account
   \\\dots\\
@@ -56,11 +55,11 @@
   \pause
   \begin{itemize}
     \item<+-> separate content and formatting
-    \item<+-> automate numbering, cross-references, \dots everything!
+    \item<+-> automate numbering, cross-references, \dots everything! (except writing)
     \item<+-> beautiful math
     \item<+-> comments and version control
     \item<+-> no version compatibility issues
-    \item<+-> it's free!
+    \item<+-> it's free and open source!
   \end{itemize}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
@@ -69,24 +68,76 @@
     \includegraphics[width=0.6\linewidth]{latex-vs-word}
   \end{figure}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{How \LaTeX\ Works}
 %---------------------------------------------------------------------------------------------------
 \begin{frame}[fragile]{How does \LaTeX\ Work?}
   Three layers:\\[0.5em]
   \begin{enumerate}
-    \pause\item\parbox{2.3cm}{``primitives''} -- e.g.\ \lstinline|\def\pi{3.14}| defines a macro \lstinline|\pi| to contain ``3.14''\\[0.2em]
-         \pause\parbox{2.3cm}{+ ``kernel''}   -- e.g.\ tools to combine primitives
-    \pause\item\parbox{2.3cm}{``classes''}    -- e.g.\ an article, which should have: title, author, sections, etc.\\[0.2em]
-         \pause\parbox{2.3cm}{+ ``packages''} -- e.g.\ modify or extend a basic class
-    \pause\item\parbox{2.3cm}{``document''}   -- e.g.\ this specific article (including content!)
+    \pause\item\parbox{2.5cm}{``kernel''}       -- parses code, stores things, creates PDF\\[.2em]
+         \pause\parbox{2.5cm}{+ ``built-ins''}  -- functions, e.g.\ \lstinline|\newcommand{\pi}{3.14}|; then \lstinline|\pi| becomes ``3.14''
+    \pause\item\parbox{2.5cm}{``classes''}      -- types of document, e.g.\ an article, having: format, title, etc.\\[0.2em]
+         \pause\parbox{2.5cm}{+ ``packages''}   -- modify or extend a class, e.g.\ add graphics
+    \pause\item\parbox{2.5cm}{``document''}     -- this specific document, e.g.\ your thesis
   \end{enumerate}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
+\begin{frame}[fragile]{Kernel: Putting Stuff on a Page}
+  \newcommand{\bfbox}[1]{\sbox0{#1}%
+    {\color{C2!50!white}\vrule width\wd0 height\ht0 depth\dp0}%
+    \llap{\color{C3}\vrule width\wd0 height.05ex depth.05ex}%
+    \llap{\usebox0}}
+  \begin{minipage}{0.5\linewidth}
+    \newcommand{\iarrow}[2]{\hspace{#1em}$\rightarrow$~{#2}\par}
+    Boxes:\par
+    \iarrow{1}{characters}
+    \iarrow{2}{words}
+    \iarrow{3}{lines}
+    \iarrow{4}{paragraphs\visible<3->{\qquad+ floats}}
+    \iarrow{5}{pages}
+    \vspace{1em}
+    \visible<2->{
+    Combining boxes:
+    \begin{itemize}
+      \item \textbf{modes:} horizontal, vertical, math
+      \item \textbf{glue:} stretchy space
+      \item \textbf{penalties:} avoid ``bad'' layouts
+    \end{itemize}}
+  \end{minipage}%
+  \begin{minipage}{0,5\linewidth}
+    \centering\scalebox{3}{\itshape\bfbox{it's} \bfbox{a} \bfbox{frog}}
+  \end{minipage}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Getting Started}
 %---------------------------------------------------------------------------------------------------
+\begin{frame}{Editors}
+  \begin{minipage}{0.5\linewidth}
+    \centerline{\smash{\includegraphics[height=5ex]{overleaf}}}\bigskip\par
+    \begin{itemize}
+      \item no install + package management
+      \item must have internet connection
+      \item pay to integrate reference database 
+      \item some collaborate features
+    \end{itemize}
+  \end{minipage}%
+  \visible<2->{%
+  \begin{minipage}{0.5\linewidth}
+    \centerline{\smash{\includegraphics[height=8ex]{texstudio}~\raisebox{.5ex}{\fontshape{ui}\Large\selectfont studio}}}\bigskip\par
+    \begin{itemize}
+      \item install + manage packages locally
+      \item no internet connection required
+      \item free to integrate reference database
+      \item DIY collaborate
+    \end{itemize}
+  \end{minipage}}
+\end{frame}
+%---------------------------------------------------------------------------------------------------
 \begin{frame}[fragile]{Your First Document}
+% \begin{frame}[fragile]{Writing a Thesis}
   \begin{minipage}{0.44\linewidth}
     \begin{lstlisting}
-\documentclass{article}
+\documentclass{ut-thesis}
 % document header
 \begin{document}
   % document content
@@ -96,36 +147,37 @@
   \end{minipage}
   \pause
   \begin{minipage}{0.55\linewidth}
-    But first: \hrefc{https://www.overleaf.com}{Overleaf}
-    \pause
-    $\rightarrow$ ``New Project''
+    Go to: \hrefc{https://www.overleaf.com}{Overleaf.com}
+    %\pause\\[0.2em]
+    %\null\hspace{1em} $\rightarrow$ New Project \\
+    %\null\hspace{2em} $\rightarrow$ Templates: View All\\
+    %\null\hspace{3em} $\rightarrow$ Search: \emph{Toronto} \\
   \end{minipage}
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 \begin{frame}{Document Elements}
   \pause
   \begin{itemize}
-    \item<+-> title, author, date
-    \item<+-> sections
+    \item<+-> title, author, year, degree, department
+    \item<+-> chapters, sections, etc.
     \item<+-> math
     \item<+-> floats: figures \& tables
     \item<+-> cross-references \& table of contents
     \item<+-> citations \& bibliography
-    \item<+-> appendices \& code
   \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Examples}
-%---------------------------------------------------------------------------------------------------
-\begin{frame}{Putting it all Together}
-  \pause
-  \begin{itemize}
-    \item<+-> \parbox{2cm}{e.g.\ article:} \hrefc{\github/tree/master/examples/article/main.pdf}{example}
-    \item<+-> \parbox{2cm}{e.g.\ thesis:}  \hrefc{\github/tree/master/examples/thesis/main.pdf} {example}
-    \item<+-> \parbox{2cm}{e.g.\ poster:}  \hrefc{\github/tree/master/examples/poster/main.pdf} {example}
-    \item<+-> \parbox{2cm}{e.g.\ CV:}      \hrefc{\github/tree/master/examples/cv/main.pdf}     {example}
-  \end{itemize}
-\end{frame}
+\section{Resources}
+% %---------------------------------------------------------------------------------------------------
+% \begin{frame}{Putting it all Together}
+%   \pause
+%   \begin{itemize}
+%     \item<+-> \parbox{2cm}{e.g.\ article:} \hrefc{\github/tree/master/examples/full/article/main.pdf}  {example}
+%     \item<+-> \parbox{2cm}{e.g.\ thesis:}  \hrefc{\github/tree/master/examples/full/ut-thesis/main.pdf}{example}
+%     \item<+-> \parbox{2cm}{e.g.\ poster:}  \hrefc{\github/tree/master/examples/full/poster/main.pdf}   {example}
+%     \item<+-> \parbox{2cm}{e.g.\ CV:}      \hrefc{\github/tree/master/examples/full/cv/main.pdf}       {example}
+%   \end{itemize}
+% \end{frame}
 %---------------------------------------------------------------------------------------------------
 \begin{frame}[fragile]{Helpful Resources}
 \newcommand{\linkbox}[2]{\parbox{3.5cm}{\hrefc{#1}{#2}}}

@@ -43,15 +43,3 @@
 \let\tmpitemize\itemize
 \let\tmpenditemize\enditemize
 \renewenvironment{itemize}{\tmpitemize\addtolength{\itemsep}{-0.1\baselineskip}}{\tmpenditemize}
-% section titles
-\AtBeginSection[]{\begin{frame}\vfill\centering
-  \begin{beamercolorbox}[sep=18pt,center]{section}
-    \usebeamerfont{title}\textsc{\insertsectionhead}\par%
-  \end{beamercolorbox}
-  \vfill\end{frame}}
-% subsection titles
-\newcommand{\subsectionslide}{\begin{frame}\vfill\centering
-  \begin{beamercolorbox}[sep=12pt,center]{subsection}
-    \usebeamerfont{title}\insertsubsectionhead\par%
-  \end{beamercolorbox}
-  \vfill\end{frame}}
