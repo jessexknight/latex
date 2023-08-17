@@ -1,0 +1,71 @@
+\documentclass{ut-thesis}
+% meta-data
+\title{A very ineresting result}
+\author{Jesse Knight}
+\gradyear{2023}
+\degree{Doctor of Philosophy}
+\department[]{Institute of Medical Science}
+% float stuff
+\usepackage{subcaption,graphicx,booktabs,multicol}
+\graphicspath{{fig/}}
+% bib stuff
+\usepackage[refsection=chapter,sorting=none]{biblatex}
+\addbibresource{main.bib}
+\newcommand{\printchapterbibliography}{
+  \printbibliography[heading=subbibliography,resetnumbers=true]}
+\usepackage[colorlinks]{hyperref}
+\begin{document}
+  \frontmatter
+    \maketitle % title page
+    \begin{abstract} % abstract page
+      \input{abstract}
+    \end{abstract}
+    \tableofcontents
+    \listoffigures
+    \listoftables
+  \mainmatter
+    \chapter{Introduction}
+    Hello world%
+    \footnote{This was revealed to me in a dream.}
+    \cite{Last2021,Last2022}
+    \printchapterbibliography
+    \chapter{Methods}
+    \cite{Last2022,Last2023}
+    \printchapterbibliography
+    \chapter{Results}
+    Figure~\ref{fig:latex} shows \dots
+    including (\subref{fig:latex.a}) \dots and (\subref{fig:latex.b}).
+    \begin{figure}[h]
+      \begin{subfigure}{.5\linewidth}
+        \includegraphics[width=\linewidth]{latex}
+        \caption{first subcaption}
+        \label{fig:latex.a}
+      \end{subfigure}
+      \begin{subfigure}{.5\linewidth}
+        \includegraphics[width=\linewidth]{latex}
+        \caption{second subcaption}
+        \label{fig:latex.b}
+      \end{subfigure}
+      \caption{Figure caption}
+      \label{fig:latex}
+    \end{figure}
+  \appendix
+    \chapter{Supplementary Results}
+    Hello world
+    \begin{table}
+      \centering
+      \caption{Table caption}
+      \begin{tabular}{lrc}
+        \toprule
+                  & \multicolumn{2}{c}{Value} \\
+        \cmidrule(rl){2-3}
+        Variable  & Mean & (95\%~CI) \\
+        \midrule
+        $\alpha$  & 0.69 & (0.56,~0.82) \\[1ex]
+        $\beta_1$ & 4.20 & (3.28,~5.62) \\
+        $\beta_2$ & 4.44 & (3.33,~5.55) \\
+        \bottomrule
+      \end{tabular}
+    \end{table}
+  \backmatter
+\end{document}
