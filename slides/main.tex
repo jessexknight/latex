@@ -5,7 +5,7 @@
 \title[\LaTeX: A Short Introduction]{\LaTeX\\\textsc{\small{A Short Introduction}}}
 \author[\href{\github}{\tiny\texttt{\github}}\hspace{0.2\linewidth}Jesse Knight]{Jesse Knight}
 \institute{University of Toronto\\Libraries}
-\date{\today}
+\date{2023 Aug 16}
 \input{config}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -134,10 +134,9 @@
 \end{frame}
 %---------------------------------------------------------------------------------------------------
 \begin{frame}[fragile]{Your First Document}
-% \begin{frame}[fragile]{Writing a Thesis}
   \begin{minipage}{0.44\linewidth}
     \begin{lstlisting}
-\documentclass{ut-thesis}
+\documentclass{article}
 % document header
 \begin{document}
   % document content
@@ -158,8 +157,8 @@
 \begin{frame}{Document Elements}
   \pause
   \begin{itemize}
-    \item<+-> title, author, year, degree, department
-    \item<+-> chapters, sections, etc.
+    \item<+-> title, author, date
+    \item<+-> sections, subsections, etc.
     \item<+-> math
     \item<+-> floats: figures \& tables
     \item<+-> cross-references \& table of contents
@@ -168,32 +167,22 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Resources}
-% %---------------------------------------------------------------------------------------------------
-% \begin{frame}{Putting it all Together}
-%   \pause
-%   \begin{itemize}
-%     \item<+-> \parbox{2cm}{e.g.\ article:} \hrefc{\github/tree/master/examples/full/article/main.pdf}  {example}
-%     \item<+-> \parbox{2cm}{e.g.\ thesis:}  \hrefc{\github/tree/master/examples/full/ut-thesis/main.pdf}{example}
-%     \item<+-> \parbox{2cm}{e.g.\ poster:}  \hrefc{\github/tree/master/examples/full/poster/main.pdf}   {example}
-%     \item<+-> \parbox{2cm}{e.g.\ CV:}      \hrefc{\github/tree/master/examples/full/cv/main.pdf}       {example}
-%   \end{itemize}
-% \end{frame}
 %---------------------------------------------------------------------------------------------------
 \begin{frame}[fragile]{Helpful Resources}
 \newcommand{\linkbox}[2]{\parbox{3.5cm}{\hrefc{#1}{#2}}}
   \begin{itemize}
+    \item \linkbox{https://www.overleaf.com/learn}{Learn LaTeX}
+    -- a great resource for learning LaTeX
     \item \linkbox{https://www.overleaf.com}{Overleaf}
-    -- online \LaTeX\ writing application\\
+    -- online \LaTeX\ writing application
     \item \linkbox{https://www.latex-tutorial.com/installation}{\LaTeX\ Install Guide}
-    -- to install \LaTeX\ on your computer (offline)\\
+    -- to install \LaTeX\ on your computer (offline)
     \item \linkbox{https://www.texstudio.org}{TeXstudio}
-    -- great editor for composing \LaTeX\ ``code'' (offline)\\
+    -- great editor for composing \LaTeX\ ``code'' (offline)
     \item \linkbox{https://tex.stackexchange.com}{\TeX\ Stack Exchange}
     -- Q \& A style how-to and debugging help
-    \item \linkbox{https://wch.github.io/latexsheet/latexsheet.pdf}{\LaTeX\ Cheat Sheet}
-    -- a really nice reference for common commands
     \item \linkbox{https://github.com/jessexknight/latex}{Github Repository}
-    -- example documents: article, thesis, CV, poster, slides
+    -- example documents \& ``cheat sheets''
   \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
