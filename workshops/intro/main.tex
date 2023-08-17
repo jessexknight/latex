@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+% titleblock info
+\title{A very ineresting result}
+\author{Jesse Knight}
+\date{\today}
+% packages
+\usepackage[margin=3cm]{geometry} % page margins, etc.
+\usepackage[colorlinks]{hyperref} % clickable + coloured links
+\usepackage{mathtools} % various tools for math
+\usepackage{graphicx} % embedding graphics
+\usepackage[style=numeric]{biblatex} % citation references
+\graphicspath{{./}{./fig/}} % where to look for figures
+\addbibresource{main.bib} % where to look for citation info
+% spacing tweaks
+\setlength{\parskip}{1ex} % space between paragraps
+\setlength{\parindent}{0pt} % indent length
+% output begins
+\begin{document}
+  \maketitle % complete title block
+  \section{Introduction}\label{intro}
+  \subsection{Background}\label{intro.back}
+  In the beginning \dots % not indented
+  \par
+  A new paragraph within Section~\ref{intro.back}. % indented + cross-reference
+  \par
+  And another \cite{Last2023}. % indented + citation
+  \section{Methods}\label{meth}
+  Let $x = \sum_i x_i$. % inline math
+  In \eqref{eq:yi}, we see that \dots % reference (1) overall
+  \begin{subequations} % (1a) ...
+    \label{eq:yi} % label (1) overall
+    \begin{align} % aligns at '&'
+      y_i &= \sum_{ij} \beta_j x^2_j \\ % sub/super-scripts
+          &= \left[ \begin{matrix} a & b \\ c & d \end{matrix} \right] \\ % matrices + auto-scaling
+          &= 2 \pi % greek symbols
+    \end{align}
+  \end{subequations}
+  \section{Results}\label{res}
+  In Figure~\ref{fig:latex}, we see \dots % another cross-reference
+  \begin{figure} % figures 'float' to avoid breaking up text
+    \centering % center everything within current scope (figure environment)
+    \includegraphics[width=.5\linewidth]{latex}% <- this comment suppresses extra space
+    \includegraphics[width=.5\linewidth]{latex}
+    \caption{THE CAPTION} % caption the figure
+    \label{fig:latex} % label the figure
+  \end{figure}
+  \printbibliography % as the name says ...
+\end{document}
