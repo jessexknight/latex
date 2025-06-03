@@ -1,31 +1,25 @@
-\usepackage{graphicx,tikz,array}
-\usepackage{bm,amsmath}
-\usepackage{hyperref,xpatch,listings}
-\usepackage[export]{adjustbox}
-\usepackage[backend=biber,style=numeric,maxcitenames=1,sorting=none,
-            isbn=false,url=true,doi=false,eprint=false]{biblatex}
-% package configuration
-\graphicspath{{figs/}}
-\bibliography{../loi/refs.bib}
+% packages
+\usepackage[T1]{fontenc}
+\usepackage{xspace,graphicx,firamono,tikz,listings}
+% config
+\beamerdefaultoverlayspecification{<+(1)->}
+\definecolor{c1}{HTML}{cc0066}
+\definecolor{c2}{HTML}{0099cc}
+\definecolor{c3}{HTML}{999999}
+\colorlet{g}{black!05}
 \lstset{
   language=[LaTeX]TeX,
   breaklines=true,
-  basicstyle=\tt\scriptsize,
-  texcsstyle=*\color{C2},
-  identifierstyle=\color[HTML]{999999},
-  commentstyle=\color{C3},
+  basicstyle=\tt\small,
+  texcsstyle=*\color{c1},
+  commentstyle=\it\color{c2},
 }
-% styling
-\input{style.tex}
-% tex commands
-\newcommand{\colortext}[2]{{\color{#1}{#2}}}
-\renewcommand{\ss}[1]{\textsuperscript{#1}}
-\newcommand{\arrow}[1]{\hspace{#1}\colortext{C2}{$\bm\rightarrow$}\hspace{#1}}
-\newcommand{\hreftt}[1]{\href{#1}{\colortext{C2}{\texttt{#1}}}}
-\newcommand{\hrefc}[2]{\href{#1}{\colortext{C2}{#2}}}
-\usetikzlibrary{arrows.meta}
-\newcommand{\bigarrow}[2][C3]{%
-  \begin{tikzpicture}
-  \draw[->,>=Latex,line width=1mm,rounded corners,draw=#1](0,0)--(#2);
-  \end{tikzpicture}
-}
+\graphicspath{{figs/}}
+% macros
+\newcommand{\rarr}{\ensuremath{\,\rightarrow\,}\xspace}
+\newcommand{\larr}{\ensuremath{\,\leftarrow\,}\xspace}
+\newcommand{\pbox}[2][.5]{\parbox[t]{#1\textwidth}{#2}\ignorespaces}
+\newcommand{\hreftt}[2][https://]{\href{#1#2}{\texttt{#2}}}
+\newcommand{\hrefc}[2]{\href{#1}{\textcolor{c2}{#2}}}
+\newcommand{\bigpause}{\par\bigskip\pause}
+\newcommand{\eg}{e.g.\xspace}
