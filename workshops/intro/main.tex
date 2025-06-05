@@ -1,48 +1,85 @@
 \documentclass[12pt]{article}
-% titleblock info
-\title{A very ineresting result}
-\author{Jesse Knight}
-\date{\today}
 % packages
 \usepackage[margin=3cm]{geometry} % page margins, etc.
 \usepackage[colorlinks]{hyperref} % clickable + coloured links
 \usepackage{mathtools} % various tools for math
 \usepackage{graphicx} % embedding graphics
+\usepackage{siunitx} % dealing with scientific units + 'S' column type
+\usepackage{multicol,multirow} % joining table cells
+\usepackage{booktabs} % better layout of tables
+\usepackage{authblk} % for multiple authors + affils
 \usepackage[style=numeric]{biblatex} % citation references
 \graphicspath{{./}{./fig/}} % where to look for figures
 \addbibresource{main.bib} % where to look for citation info
 % spacing tweaks
 \setlength{\parskip}{1ex} % space between paragraps
 \setlength{\parindent}{0pt} % indent length
+\setlength{\abovecaptionskip}{1ex} % space above captions
+\setlength{\belowcaptionskip}{1ex} % space below captions
+% titleblock info
+\title{A very ineresting result}
+\author[1,2]{Jesse Knight}
+\affil[1]{Main Institution}
+\affil[2]{Another Institution}
+\date{\today}
 % output begins
 \begin{document}
-  \maketitle % complete title block
+  \maketitle % print the title block
+  %============================================================================
   \section{Introduction}\label{intro}
   \subsection{Background}\label{intro.back}
-  In the beginning \dots % not indented
+  In the beginning \dots % first par in *section not indented
   \par
-  A new paragraph within Section~\ref{intro.back}. % indented + cross-reference
+  A new paragraph begins. % all other pars are indented
+  We reference Section~\ref{intro.back}. % '\ref'erence a \label
   \par
-  And another \cite{Last2023}. % indented + citation
+  And another \cite{Last2023}. % cite a bibliographic entry using it's ID (usually AuthorYear)
+  %============================================================================
   \section{Methods}\label{meth}
-  Let $x = \sum_i x_i$. % inline math
-  In \eqref{eq:yi}, we see that \dots % reference (1) overall
-  \begin{subequations} % (1a) ...
+  Let $x = \sum_i x_i$. % inline math (different font, usually italics)
+  In \eqref{eq:yi}, we see that \dots % ref Equation (1) overall
+  specifically, \eqref{eq:yi.pi} shows \dots\ % ref Equation (1a)
+  \begin{subequations} % automatically label sub-equations as (1a) etc.
     \label{eq:yi} % label (1) overall
-    \begin{align} % aligns at '&'
+    \begin{align} % align sub-equations at '&'
       y_i &= \sum_{ij} \beta_j x^2_j \\ % sub/super-scripts
-          &= \left[ \begin{matrix} a & b \\ c & d \end{matrix} \right] \\ % matrices + auto-scaling
-          &= 2 \pi % greek symbols
+          &= \left[ \begin{matrix} a & b \\ c & d \end{matrix} \right] \\ % matrices + auto-size "[...]"
+          &= 2 \pi \label{eq:yi.pi}% greek symbols
     \end{align}
   \end{subequations}
+  %============================================================================
   \section{Results}\label{res}
+  % figures often contain graphics, tables often contain tabular content
+  % but these are all different concepts and don't have to go together
   In Figure~\ref{fig:latex}, we see \dots % another cross-reference
   \begin{figure} % figures 'float' to avoid breaking up text
+    % control the placement "gently" using [h] = here, [t] = page top, [b] = page bottom
     \centering % center everything within current scope (figure environment)
     \includegraphics[width=.5\linewidth]{latex}% <- this comment suppresses extra space
     \includegraphics[width=.5\linewidth]{latex}
-    \caption{THE CAPTION} % caption the figure
+    \caption{THE FIGURE CAPTION} % caption the figure
     \label{fig:latex} % label the figure
   \end{figure}
+  \par
+  Table~\ref{tab:data} also shows \dots
+  \begin{table}[h] % table is another kind of 'float'
+    \centering
+    \caption{THE TABLE CAPTION}
+    \label{tab:data}
+    \begin{tabular}{lSS} % tabular environment needs argument: types of columns
+      % 'S' column type provided by siunitx aligns on decimals
+      \toprule % add a thick top line
+      % '&' moves to the next cell and \\ moves to the next row
+      Parameter & \multicolumn{2}{c}{Experiment} \\ % multicolumn joins cells horizontally
+      \cmidrule(rl){2-3} % a thinner middle line just spanning cols 2-3
+      % (rl) shortens the line a bit to avoid joining adjacent cmidrules
+                &   A   & B     \\ % 3 cells: blank, A, B
+      \midrule % a thinner middle line
+      $\alpha$  & 10.2  & 12.8  \\
+      $\beta$   &  0.17 &  0.43 \\
+      \bottomrule % add a thick bottom line
+    \end{tabular}
+  \end{table}
+  %============================================================================
   \printbibliography % as the name says ...
 \end{document}
