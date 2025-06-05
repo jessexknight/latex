@@ -52,8 +52,8 @@
 \newcommand{\layer}[1]{\pbox[.16]{\textbf{#1}}}
   \begin{enumerate}
     \item  \layer{``kernel''}      parses code, stores data, creates PDF
-    \item[]\layer{+ ``built-ins''} functions, \eg \lstinline|\newcommand{\pi}{3.14}|;
-                                   then \lstinline|\pi| becomes ``3.14''
+    \item[]\layer{+ ``built-ins''} functions, \eg \lstinline|\newcommand{\pie}{3.14}|;
+                                   then \lstinline|\pie| becomes ``3.14''
     \item  \layer{``classes''}     types of document, \eg an article, having: format, title, etc.
     \item[]\layer{+ ``packages''}  modify or extend a class, \eg adding graphics
     \item  \layer{``document''}    this specific document, \eg your thesis
@@ -65,18 +65,15 @@
   {\color{c2!33}\vrule width\wd0 height\ht0 depth\dp0}%
   \llap{\color{c2}\vrule width\wd0 height.05ex depth.05ex}%
   \llap{\usebox0}}%
-\newcommand{\iarr}[2]{\pause\hspace{#1em}\rarr~#2\par}
-  \pbox[.5]{\vskip-9pt
+  \pbox[.5]{
   \paragraph{Boxes:}
-    \iarr{1}{characters}
-    \iarr{2}{words}
-    \iarr{3}{lines}
-    \iarr{4}{paragraphs}
-    \iarr{5}{pages}
-  \vskip6pt\paragraph{Combining Boxes:}
+  letters \rarr words \rarr lines\\
+  \null\quad\rarr paragraphs \rarr pages
+  \bigskip\paragraph{Combining Boxes:}
   \begin{itemize}
     \item \textbf{modes:} horizontal, vertical, math
     \item \textbf{glue:} stretchy space
+    \item \textbf{floats:} ``float'' around (figures/tables)
     \item \textbf{penalties:} avoid ``bad'' layouts
   \end{itemize}\medskip}
   \scalebox{2.5}{\colorbox{g}{\pbox[.18]{\itshape
@@ -150,5 +147,19 @@
       documentation for drawing diagrams
     \item \linkbox{https://github.com/jessexknight/latex}{Github Repository}
       example documents \& ``cheat sheets''
+  \end{itemize}
+\end{frame}
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]{Notable \TeX\ Stack Exchange Questions}
+\newcommand{\tselink}[2]{\hrefc{https://tex.stackexchange.com/questions/#1}{#2}}
+  \begin{itemize}
+    \item \tselink{339}{Which editors can I use to write \LaTeX?}
+    \item \tselink{14}{How do I write the symbol \dots}
+    \item \tselink{595}{How can I make bold math symbols?}
+    \item \tselink{39017}{How to influence the position of figures and tables?}
+    \item \tselink{25701}{What are \texttt{bibtex} vs \texttt{biber} and \texttt{biblatex} vs \texttt{natbib}?}
+    \item \tselink{246}{What do \texttt{\string\include} vs \texttt{\string\input} do?}
+    \item \tselink{8351}{What do \texttt{\string\makeatletter} and \texttt{\string\makeatother} do?}
+    \item \tselink{1319}{How can I flex on Word plebs?}
   \end{itemize}
 \end{frame}
