@@ -20,8 +20,8 @@
 
 ### Notable TeX Stack Exchange Questions
 
-- [   339](https://tex.stackexchange.com/q/339)   - Which editors can I use to write \LaTeX?
-- [    14](https://tex.stackexchange.com/q/14)    - How do I write the symbol \dots
+- [   339](https://tex.stackexchange.com/q/339)   - Which editors can I use to write LaTeX?
+- [    14](https://tex.stackexchange.com/q/14)    - How do I write the symbol ...
 - [   595](https://tex.stackexchange.com/q/595)   - How can I make bold math symbols?
 - [ 39017](https://tex.stackexchange.com/q/39017) - How to influence the position of figures and tables?
 - [ 25701](https://tex.stackexchange.com/q/25701) - What are `bibtex` vs `biber` and `biblatex` vs `natbib`?
